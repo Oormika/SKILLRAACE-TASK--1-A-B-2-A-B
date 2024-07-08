@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Contact Registration</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Bootstrap Datepicker CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+  <style>
+    /* Custom CSS for form validation */
+    .was-validated input:invalid,
+    .was-validated textarea:invalid {
+      border-color: #dc3545;
+    }
+
+    .was-validated input:valid,
+    .was-validated textarea:valid {
+      border-color: #28a745;
+    }
+
+    /* Custom CSS for form labels */
+    .form-label {
+      font-weight: bold;
+    }
+
+    /* Custom CSS for form submit button */
+    .btn-submit {
+      background-color: #007bff;
+      border-color: #007bff;
+      transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    }
+
+    .btn-submit:hover {
+      background-color: #13f21e;
+      border-color: #e063d1;
+    }
+
+    /* Custom styles for form container */
+    .container {
+      background-color: #dfd4d4; /* Light grey background */
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1); /* Shadow effect */
+    }
+
+    /* Custom styles for headings */
+    h2 {
+      color: #007bff; /* Blue heading */
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    /* Custom styles for form fields */
+    .form-control {
+      border-radius: 5px;
+    }
+
+    /* Custom styles for form group */
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    /* Custom styles for invalid feedback */
+    .invalid-feedback {
+      color: #dc3545; /* Red color for invalid feedback */
+    }
+
+    /* Custom styles for body */
+    body {
+      background-color: #f0f0f0; /* Light grey background for the body */
+      font-family: Arial, sans-serif; /* Change font for better readability */
+    }
+
+    /* Custom styles for form */
+    form {
+      background-color: #fff; /* White background for the form */
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1); /* Shadow effect */
+    }
+  </style>
+</head>
+<body>
+
+<div class="container mt-5">
+  <h2>CONTACT  REGISTRATION FORM</h2>
+  <form id="contactForm" class="needs-validation" novalidate>
+    <!-- First Name Field -->
+    <div class="form-group">
+      <label for="firstName" class="form-label">First Name:</label>
+      <input type="text" class="form-control" id="firstName" placeholder="Enter your first name" required>
+      <div class="invalid-feedback">Please enter your first name.</div>
+    </div>
+    <!-- Middle Name Field -->
+    <div class="form-group">
+      <label for="middleName" class="form-label">Middle Name:</label>
+      <input type="text" class="form-control" id="middleName" placeholder="Enter your middle name">
+    </div>
+    <!-- Last Name Field -->
+    <div class="form-group">
+      <label for="lastName" class="form-label">Last Name:</label>
+      <input type="text" class="form-control" id="lastName" placeholder="Enter your last name" required>
+      <div class="invalid-feedback">Please enter your last name.</div>
+    </div>
+    <!-- Date of Birth Field -->
+    <div class="form-group">
+      <label for="date" class="form-label">Date of Birth:</label>
+      <input type="text" class="form-control datepicker" id="date" placeholder="Select your date of birth" required>
+      <div class="invalid-feedback">Please select your date of birth.</div>
+    </div>
+    <!-- Phone Number Field -->
+    <div class="form-group">
+      <label for="phone" class="form-label">Phone Number:</label>
+      <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number" required>
+      <div class="invalid-feedback">Please enter your phone number.</div>
+    </div>
+    <!-- Department Field -->
+    <div class="form-group">
+      <label for="department" class="form-label">Department:</label>
+      <select class="form-control" id="department" required>
+        <option value="">Select your department</option>
+        <option value="ECE">Electronics and Communication Engineering (ECE)</option>
+        <option value="EEE">Electrical and Electronics Engineering (EEE)</option>
+        <option value="CSE">Computer Science and Engineering (CSE)</option>
+        <option value="Mech">Mechanical Engineering (Mech)</option>
+        <option value="Civil">Civil Engineering (Civil)</option>
+        <option value="IT">Information Technology (IT)</option>
+      </select>
+      <div class="invalid-feedback">Please select your department.</div>
+    </div>
+    <!-- Gender Field -->
+    <div class="form-group">
+      <label class="form-label">Gender:</label>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="gender" id="genderMale" value="male" required>
+        <label class="form-check-label" for="genderMale">Male</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="gender" id="genderFemale" value="female" required>
+        <label class="form-check-label" for="genderFemale">Female</label>
+      </div>
+      <div class="invalid-feedback">Please select your gender.</div>
+    </div>
+    <!-- Address Field -->
+    <div class="form-group">
+      <label for="address" class="form-label">Address:</label>
+      <textarea class="form-control" id="address" rows="3" placeholder="Enter your address" required></textarea>
+      <div class="invalid-feedback">Please enter your address.</div>
+    </div>
+    <!-- Country Field -->
+    <div class="form-group">
+      <label for="country" class="form-label">Country:</label>
+      <input type="text" class="form-control" id="country" placeholder="Enter your country" required>
+      <div class="invalid-feedback">Please enter your country.</div>
+    </div>
+    <!-- District Field -->
+    <div class="form-group">
+      <label for="district" class="form-label">District:</label>
+      <input type="text" class="form-control" id="district" placeholder="Enter your district" required>
+      <div class="invalid-feedback">Please enter your district.</div>
+    </div>
+    <!-- Village Field -->
+    <div class="form-group">
+      <label for="village" class="form-label">Village:</label>
+      <input type="text" class="form-control" id="village" placeholder="Enter your village" required>
+      <div class="invalid-feedback">Please enter your village.</div>
+    </div>
+    <!-- Pincode Field -->
+    <div class="form-group">
+      <label for="pincode" class="form-label">Pincode:</label>
+      <input type="text" class="form-control" id="pincode" placeholder="Enter your pincode" required>
+      <div class="invalid-feedback">Please enter your pincode.</div>
+    </div>
+    <!-- Interests Field -->
+    <div class="form-group">
+      <label for="interests" class="form-label">Interests:</label>
+      <select multiple class="form-control" id="interests" required>
+        <option value="sports">Sports</option>
+        <option value="music">Music</option>
+        <option value="travel">Travel</option>
+        <option value="cooking">Cooking</option>
+        <option value="reading">Reading</option>
+      </select>
+      <div class="invalid-feedback">Please select at least one interest.</div>
+    </div>
+    <!-- Message Field -->
+    <div class="form-group">
+      <label for="message" class="form-label">Message:</label>
+      <textarea class="form-control" id="message" rows="5" placeholder="Enter your message" required></textarea>
+      <div class="invalid-feedback">Please enter your message.</div>
+    </div>
+    <!-- Checkbox Field -->
+   
+    <!-- Dropdown Field -->
+    <div class="form-group">
+      <label for="reason" class="form-label">Reason for Contact:</label>
+      <select class="form-control" id="reason">
+        <option value="">Select a reason</option>
+        <option value="question">Question</option>
+        <option value="feedback">Feedback</option>
+        <option value="support">Support</option>
+      </select>
+    </div>
+    <!-- Submit Button -->
+    <center><button type="submit" class="btn btn-primary btn-submit">Submit</button></center>
+  </form>
+</div>
+
+<!-- Bootstrap JS and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!-- Bootstrap Datepicker JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+<script>
+  // Datepicker Initialization
+  $('.datepicker').datepicker({
+    format: 'yyyy-mm-dd',
+    autoclose: true,
+    todayHighlight: true
+  });
+</script>
+</body>
+</html>
